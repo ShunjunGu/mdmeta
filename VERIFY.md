@@ -1,26 +1,27 @@
-# VERIFY · mdmeta local MVP
+# VERIFY · mdmeta
 
-**Updated:** 2026-10-26 ~12:35 Asia/Shanghai  
-**Local path:** `/workspace/paid-ops/moonbit-hackathon-2026-10/mdmeta/`  
-**Module:** `ShunjunGu/mdmeta` @ 0.1.0 · Apache-2.0
+**Updated:** 2026-10-26 20:25 Asia/Shanghai  
+**Module:** `ShunjunGu/mdmeta` @ 0.1.0 · Apache-2.0  
+**Public:** https://github.com/ShunjunGu/mdmeta
 
-## Done on this box
+## Done
 
-- [x] `moon new` project (not hello-demo)
 - [x] Parse `---` YAML frontmatter (scalars + simple lists)
 - [x] Schema validate (required keys + types)
 - [x] Library get / with_field / list / render
-- [x] CLI: `get` `set` `list` `validate` `batch` (JSON report)
-- [x] `moon test` — 8 passed
-- [x] README examples + `examples/*.md`
-- [x] No git push / no Feishu / no WeChat join
+- [x] CLI: `get` `set` `list` `validate` `batch`
+- [x] `moon test` — 8 passed (box 2026-10-26)
+- [x] README + `DEMO.md` + `scripts/demo.sh` + examples
+- [x] Public GitHub repo
+- [x] Issues #1 #2 for acceptance tracking
+- [x] Local CI workflow file `.github/workflows/ci.yml` (push pending if not on remote yet)
 
-## Still needs the user
+## User / process
 
-1. **Public GitHub repo URL** for `mdmeta` (GitHub restore + create public repo; this package does **not** push).
-2. Join **赛事交流群**, set nick = **`ShunjunGu`** (GitHub ID).
-3. Fill **飞书报名表** (≤3 times in October) with one-pager + public repo URL.
-4. Keep public commits through 2026-10-31; optional mooncakes.io publish / GitHub Action later.
+- [x] 飞书报名（mdmeta）
+- [x] 赛事群昵称 = `ShunjunGu`
+- [ ] Continuous commits on GitHub through **2026-10-31** (DEMO/CI polish push)
+- [ ] 本期审核通过后领完成支持 ¥350
 
 ## Quick re-verify
 
@@ -28,5 +29,5 @@
 export PATH="$HOME/.moon/bin:$PATH"
 cd /workspace/paid-ops/moonbit-hackathon-2026-10/mdmeta
 moon test
-moon run cmd/main -- batch examples --require title --require date
+bash scripts/demo.sh
 ```
