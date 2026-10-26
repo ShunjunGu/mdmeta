@@ -1,0 +1,9 @@
+import {
+  "ShunjunGu/mdmeta",
+  "moonbitlang/x/fs",
+  "moonbitlang/x/path",
+  "moonbitlang/x/sys",
+  "moonbitlang/core/argparse",
+}
+
+pkgtype(kind: "executable")

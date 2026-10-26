@@ -1,0 +1,108 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "ShunjunGu/mdmeta"
+
+import {
+  "moonbitlang/core/debug",
+}
+
+// Values
+pub fn field_type_of_value(YamlValue) -> FieldType
+
+pub fn frontmatter_to_json(Map[String, YamlValue]) -> Json
+
+pub fn get_field(Document, String) -> YamlValue?
+
+pub fn list_fields(Document) -> Array[String]
+
+pub fn parse_document(String) -> Document raise ParseError
+
+pub fn parse_field_type(String) -> FieldType?
+
+pub fn parse_yaml_map(String) -> Map[String, YamlValue] raise ParseError
+
+pub fn render_document(Document) -> String
+
+pub fn render_frontmatter(Map[String, YamlValue]) -> String
+
+pub fn schema_of_requires(ArrayView[String], Map[String, FieldType]) -> Schema
+
+pub fn validate(Document, Schema) -> Array[ValidationIssue]
+
+pub fn with_field(Document, String, YamlValue) -> Document
+
+pub fn yaml_value_to_json(YamlValue) -> Json
+
+pub fn yaml_value_to_string(YamlValue) -> String
+
+// Errors
+pub(all) suberror ParseError {
+  Message(String)
+} derive(Eq, @debug.Debug)
+pub fn ParseError::equal(Self, Self) -> Bool
+pub fn ParseError::not_equal(Self, Self) -> Bool
+pub fn ParseError::to_repr(Self) -> @debug.Repr
+pub fn ParseError::to_string(Self) -> String
+
+// Types and methods
+pub(all) struct Document {
+  frontmatter : Map[String, YamlValue]
+  body : String
+  has_frontmatter : Bool
+} derive(Eq, @debug.Debug)
+pub fn Document::equal(Self, Self) -> Bool
+pub fn Document::not_equal(Self, Self) -> Bool
+pub fn Document::to_repr(Self) -> @debug.Repr
+
+pub(all) struct FieldSpec {
+  name : String
+  required : Bool
+  ty : FieldType
+} derive(Eq, @debug.Debug)
+pub fn FieldSpec::equal(Self, Self) -> Bool
+pub fn FieldSpec::not_equal(Self, Self) -> Bool
+pub fn FieldSpec::to_repr(Self) -> @debug.Repr
+
+pub(all) enum FieldType {
+  TyString
+  TyBool
+  TyInt
+  TyFloat
+  TyList
+  TyAny
+} derive(Eq, @debug.Debug)
+pub fn FieldType::equal(Self, Self) -> Bool
+pub fn FieldType::not_equal(Self, Self) -> Bool
+pub fn FieldType::to_repr(Self) -> @debug.Repr
+pub fn FieldType::to_string(Self) -> String
+
+pub(all) struct Schema {
+  fields : Array[FieldSpec]
+} derive(Eq, @debug.Debug)
+pub fn Schema::equal(Self, Self) -> Bool
+pub fn Schema::not_equal(Self, Self) -> Bool
+pub fn Schema::to_repr(Self) -> @debug.Repr
+
+pub(all) struct ValidationIssue {
+  key : String
+  message : String
+} derive(Eq, @debug.Debug)
+pub fn ValidationIssue::equal(Self, Self) -> Bool
+pub fn ValidationIssue::not_equal(Self, Self) -> Bool
+pub fn ValidationIssue::to_repr(Self) -> @debug.Repr
+
+pub(all) enum YamlValue {
+  Null
+  Bool(Bool)
+  Int(Int32)
+  Float(Double)
+  String(String)
+  List(Array[YamlValue])
+} derive(Eq, @debug.Debug)
+pub fn YamlValue::equal(Self, Self) -> Bool
+pub fn YamlValue::not_equal(Self, Self) -> Bool
+pub fn YamlValue::to_repr(Self) -> @debug.Repr
+pub fn YamlValue::to_string(Self) -> String
+
+// Type aliases
+
+// Traits
